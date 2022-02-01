@@ -1,0 +1,194 @@
+@import url("https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+button {
+  cursor: pointer;
+}
+button:focus {
+  outline: none;
+}
+
+body {
+  font-family: sans-serif;
+  font-weight: 300;
+  background: #fc00ff;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #00dbde, #fc00ff);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #00dbde, #fc00ff);
+  font-family: "Roboto", sans-serif;
+}
+
+.header {
+  text-align: center;
+}
+.header .app-title {
+  display: inline-block;
+  padding: 15px;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.app {
+  width: 600px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.contextbox {
+  background-color: #fff;
+  padding: 15px;
+  padding-bottom: 5px;
+  border-radius: 5px;
+}
+.contextbox textarea,
+.contextbox input {
+  width: 100%;
+  resize: none;
+  padding: 8px;
+  border: none;
+  font-size: 16px;
+}
+.contextbox textarea:focus,
+.contextbox input:focus {
+  outline: none;
+}
+.contextbox .controls {
+  height: 35px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.contextbox .controls button {
+  background: #fc00ff;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #00dbde, #fc00ff);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #00dbde, #fc00ff);
+  color: #fff;
+  border: none;
+  text-transform: uppercase;
+  font-size: 16px;
+  padding: 4px 18px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.15);
+  transition: 300ms;
+  cursor: pointer;
+}
+.contextbox .controls button:focus {
+  outline: none;
+}
+.contextbox .controls button:hover {
+  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.35);
+}
+.contextbox .controls .colors {
+  display: flex;
+}
+.contextbox .controls .colors span {
+  margin-right: 5px;
+  height: 25px;
+  width: 25px;
+  content: "";
+  display: inline-block;
+  background: red;
+}
+.contextbox .controls .colors span.c1 {
+  background-color: #d8e2dc;
+}
+.contextbox .controls .colors span.c2 {
+  background-color: #ffe5d9;
+}
+.contextbox .controls .colors span.c3 {
+  background-color: #fbfaf0;
+}
+.contextbox .controls .colors span.c4 {
+  background-color: #ffe9ee;
+}
+.contextbox .controls .colors span.c5 {
+  background-color: #ffdde4;
+}
+.contextbox .controls .colors span.selected {
+  border: 2px solid #000;
+}
+
+.filter {
+  margin-top: 25px;
+  text-align: center;
+}
+.filter button {
+  border: none;
+  border: none;
+  padding: 5px 10px;
+}
+.filter button.selected {
+  border: 2px solid #000;
+}
+
+.notes {
+  margin-top: 25px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 15px;
+  row-gap: 15px;
+}
+@media all and (max-width: 600px) {
+  .notes {
+    grid-template-columns: 1fr;
+  }
+}
+.notes .note {
+  border-radius: 5px;
+  background-color: #fff;
+  padding: 15px;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+  transition: 300px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  position: relative;
+}
+.notes .note:hover {
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+}
+.notes .note h3 {
+  margin: 0;
+}
+.notes .note .time {
+  margin-bottom: 0;
+  color: #333;
+}
+.notes .note:hover .buttons {
+  opacity: 1;
+}
+.notes .note .buttons {
+  transition: 300ms;
+  opacity: 0;
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: none;
+}
+.notes .note .buttons button {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
+.notes .note .buttons button:focus {
+  outline: none;
+}
+.notes .note .buttons .delete {
+  color: red;
+  font-size: 20px;
+}
+.notes .note .buttons .edit {
+  padding-top: 5px;
+  font-size: 16px;
+}
