@@ -1,0 +1,212 @@
+@import url("https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+$radius: 20px;
+
+@mixin gradient {
+  background: #fc00ff; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #00dbde,
+    #fc00ff
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #00dbde, #fc00ff);
+}
+
+button {
+  &:focus {
+    outline: none;
+  }
+  cursor: pointer;
+}
+
+body {
+  font-family: sans-serif;
+  font-weight: 300;
+  @include gradient;
+
+  font-family: "Roboto", sans-serif;
+}
+.header {
+  text-align: center;
+  .app-title {
+    // background-color: #fddb19;
+    display: inline-block;
+    padding: 15px;
+    text-transform: uppercase;
+    font-weight: 800;
+    color: rgba(#000000, 0.3);
+  }
+}
+
+.app {
+  width: 600px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.contextbox {
+  background-color: #fff;
+  padding: 15px;
+  padding-bottom: 5px;
+  border-radius: 5px;
+  textarea,
+  input {
+    width: 100%;
+    resize: none;
+    padding: 8px;
+    border: none;
+    font-size: 16px;
+    &:focus {
+      outline: none;
+    }
+  }
+  .controls {
+    height: 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    button {
+      @include gradient;
+      color: #fff;
+      border: none;
+      text-transform: uppercase;
+      font-size: 16px;
+      padding: 4px 18px;
+      border-radius: $radius;
+      box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.15);
+      transition: 300ms;
+      cursor: pointer;
+      &:focus {
+        outline: none;
+      }
+      &:hover {
+        box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.35);
+      }
+    }
+    .colors {
+      display: flex;
+      span {
+        margin-right: 5px;
+        $s: 25px;
+        height: $s;
+        width: $s;
+        content: "";
+        display: inline-block;
+        background: red;
+
+        $c1: #d8e2dc;
+        $c2: #ffe5d9;
+        $c3: #fbfaf0;
+        $c4: #ffe9ee;
+        $c5: #ffdde4;
+        &.c1 {
+          background-color: $c1;
+        }
+        &.c2 {
+          background-color: $c2;
+        }
+        &.c3 {
+          background-color: $c3;
+        }
+        &.c4 {
+          background-color: $c4;
+        }
+        &.c5 {
+          background-color: $c5;
+        }
+        &.selected {
+          border: 2px solid #000;
+        }
+      }
+    }
+  }
+}
+
+.filter {
+  margin-top: 25px;
+  text-align: center;
+  button {
+    border: none;
+    border: none;
+    padding: 5px 10px;
+
+    &.selected {
+      border: 2px solid #000;
+    }
+  }
+}
+
+.notes {
+  margin-top: 25px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  @media all and (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
+  column-gap: 15px;
+  row-gap: 15px;
+  .note {
+    border-radius: 5px;
+    background-color: #fff;
+    padding: 15px;
+    box-shadow: 0 5px 5px rgba(#000000, 0.3);
+    transition: 300px;
+
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    &:hover {
+      box-shadow: 0 5px 25px rgba(#000000, 0.3);
+    }
+    h3 {
+      margin: 0;
+    }
+    .time {
+      margin-bottom: 0;
+      color: #333;
+    }
+
+    &:hover {
+      .buttons {
+        opacity: 1;
+      }
+    }
+
+    position: relative;
+    .buttons {
+      transition: 300ms;
+      opacity: 0;
+
+      display: flex;
+
+      position: absolute;
+      top: 0;
+      right: 0;
+      border: none;
+      position: absolute;
+      top: 0;
+      right: 0;
+      border: none;
+      button {
+        &:focus {
+          outline: none;
+        }
+        cursor: pointer;
+        border: none;
+        background-color: transparent;
+      }
+      .delete {
+        color: red;
+        font-size: 20px;
+      }
+      .edit {
+        padding-top: 5px;
+        font-size: 16px;
+      }
+    }
+  }
+}

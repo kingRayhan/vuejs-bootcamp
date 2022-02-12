@@ -7,13 +7,16 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "dayjs": "^1.10.7",
     "uuid": "^8.3.2",
-    "vue": "^3.2.25"
+    "vue": "^3.2.25",
+    "vuex": "^4.0.2"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.0.0",
     "autoprefixer": "^10.4.2",
     "postcss": "^8.4.6",
+    "sass": "^1.49.7",
     "tailwindcss": "^3.0.18",
     "vite": "^2.7.2"
   }
