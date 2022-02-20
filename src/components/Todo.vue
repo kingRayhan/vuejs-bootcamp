@@ -1,6 +1,6 @@
 <template>
   <div
-    @click="$emit('onToggle', todo)"
+    @click="handleOnClick"
     class="todo"
     :class="{
       'todo--done': todo.done,
@@ -16,8 +16,11 @@
   </div>
 </template>
 
-<script>
-export default {
-  props: ["todo"],
+<script setup>
+const props = defineProps(["todo"]);
+const emits = defineEmits(["onToggle"]);
+
+const handleOnClick = () => {
+  emits("onToggle", props.todo);
 };
 </script>
